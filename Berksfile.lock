@@ -1,0 +1,83 @@
+": "10e9130d51ddf3ba9f2206d060775670b8a08107",
+  "sources": {
+    "drupal": {
+      "locked_version": "0.1.1",
+      "git": "git://github.com/promet/drupal_cookbook.git",
+      "ref": "c5a134605b00c0c755966f2fb93dfeae988aea1a" 
+    },
+    "solo-helper": {
+      "locked_version": "0.0.1",
+      "git": "https://github.com/glennpratt/solo-helper_cookbook.git",
+      "ref": "183b6e411c930ac8e7c638ad3cb10cae6a8af8fc" 
+    },
+    "chef-xdebug": {
+      "locked_version": "0.0.1",
+      "git": "https://github.com/MrMaksimize/chef-xdebug.git",
+      "ref": "7fd91ae36e836804a50a52fa6e8288e87ed9a7a5" 
+    },
+    "apt": {
+      "locked_version": "2.0.0" 
+    },
+    "database": {
+      "locked_version": "1.4.0" 
+    },
+    "mysql": {
+      "locked_version": "3.0.2",
+      "constraint": ">= 1.3.0" 
+    },
+    "openssl": {
+      "locked_version": "1.0.2" 
+    },
+    "build-essential": {
+      "locked_version": "1.4.0",
+      "constraint": "> 1.1.0" 
+    },
+    "postgresql": {
+      "locked_version": "3.0.2",
+      "constraint": ">= 1.0.0" 
+    },
+    "aws": {
+      "locked_version": "0.101.2" 
+    },
+    "xfs": {
+      "locked_version": "1.1.0" 
+    },
+    "apache2": {
+      "locked_version": "1.6.2" 
+    },
+    "git": {
+      "locked_version": "2.5.2" 
+    },
+    "dmg": {
+      "locked_version": "1.1.0" 
+    },
+    "yum": {
+      "locked_version": "2.2.4" 
+    },
+    "windows": {
+      "locked_version": "1.10.0" 
+    },
+    "chef_handler": {
+      "locked_version": "1.1.4" 
+    },
+    "runit": {
+      "locked_version": "1.1.4",
+      "constraint": ">= 1.0.0" 
+    },
+    "php": {
+      "locked_version": "1.2.2" 
+    },
+    "xml": {
+      "locked_version": "1.1.2" 
+    },
+    "memcached": {
+      "locked_version": "1.4.0" 
+    },
+    "postfix": {
+      "locked_version": "2.1.6" 
+    },
+    "hostsfile": {
+      "locked_version": "1.0.2" 
+    }
+  }
+}

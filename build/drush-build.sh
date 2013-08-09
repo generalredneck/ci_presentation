@@ -18,4 +18,4 @@ $drush en $(cat $build_path/mods_enabled | tr '\n' ' ') -y &&
 $drush cc all &&
 $drush fra -y &&
 $drush dis comment shortcut overlay toolbar -y &&
-$drush cc all -y &&
+$drush cc all -y

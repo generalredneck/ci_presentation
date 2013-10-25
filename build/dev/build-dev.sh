@@ -13,13 +13,12 @@ done
 drush="drush $drush_flags"
 build_path=$(dirname "$0")
 
-echo "Disabling modules we do not need on dev or staging.";
-$drush dis $(cat $build_path/dev_mods_purge | tr '\n' ' ') -y
-echo "Uninstalling modules we do not need on dev or staging.";
-$drush pm-uninstall $(cat $build_path/dev_mods_purge | tr '\n' ' ') -y
-echo "Enabling css and js caching.";
-$drush vset -y preprocess_css 1 &&
-$drush vset -y preprocess_js 1
+echo "Installing database.";
+$drush si -y --account-pass='drupaladm1n'
+echo "Enabling modules needed for local development.";
+$drush en $(cat $build_path/dev_mods_enabled | tr '\n' ' ') -y -v
+echo "Clearing caches.";
+$drush cc all -y
 echo "Enabling all caching.";
 $drush vset cache 1 &&
 $drush vset block_cache 1 &&

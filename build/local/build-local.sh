@@ -4,7 +4,6 @@ TMP_PWD=$PWD
 
 pushd $PWD
 
-drupal_path="/var/drupals/gc011/www"
 build_path=$(dirname "$0")
 
 # Pass all arguments to drush

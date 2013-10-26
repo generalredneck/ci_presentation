@@ -1,6 +1,7 @@
-gth to the Berksfile to use with Vagrant Berkshelf
+Vagrant.configure("2") do |config|
+  # The path to the Berksfile to use with Vagrant Berkshelf
   config.berkshelf.enabled = true
-  config.berkshelf.berksfile_path = "./Berksfile" 
+  config.berkshelf.berksfile_path = "./Berksfile"
   # An array of symbols representing groups of cookbook described in the Vagrantfile
   # to skip installing and copying to Vagrant's shelf.
   # config.berkshelf.only = []
@@ -9,10 +10,10 @@ gth to the Berksfile to use with Vagrant Berkshelf
   # to skip installing and copying to Vagrant's shelf.
   # config.berkshelf.except = []
 
-  config.vm.box = "squeeze" 
-  config.vm.box_url = "https://s3.amazonaws.com/wa.milton.aws.bucket01/sqeeze.box" 
+  config.vm.box = "squeeze"
+  config.vm.box_url = "https://s3.amazonaws.com/wa.milton.aws.bucket01/sqeeze.box"
 
-  config.vm.network :private_network, ip: "10.33.36.10" 
+  config.vm.network :private_network, ip: "10.33.36.11"
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", 2048]
@@ -30,14 +31,11 @@ gth to the Berksfile to use with Vagrant Berkshelf
   # config.vm.network :forwared_port, guest: 22, host: 2201,
   #   auto_correct: true
 
-  project = 'ci'
-
-  config.vm.hostname = "promet-#{project}" 
+  project = 'default-d7'
 
   config.vm.synced_folder ".", "/var/drupals/#{project}", :nfs => true
 
-  config.vm.provision :chef_solo do |chef|
-    chef.json = {
+    chef_json = {
       :mysql => {
         :server_root_password => 'rootpass',
         :server_debian_password => 'debpass',
@@ -58,19 +56,28 @@ gth to the Berksfile to use with Vagrant Berkshelf
       :drupal => {
         :sites => {
           "#{project}.dev" => {
+            :owner => "vagrant",
+            :group => "www-data",
             :root => "/var/drupals/#{project}",
-            :doc_root => "/var/drupals/#{project}/www",
+            :doc_root => "www",
             :db => "#{project}DB",
             :db_username => "#{project}DBA",
             :db_password => "#{project}PASS",
-            :db_init => true
+            :db_init => true,
           }
         }
+      },
+      :promet_php => {
+        :memory_limit => "128M",
       }
     }
-    chef.add_recipe "solo-helper" 
-    chef.add_recipe "drupal::default" 
-    chef.add_recipe "drupal::node_sites" 
-    chef.add_recipe "drupal::drush" 
+
+    config.vm.provision :chef_solo do |chef|
+    chef.add_recipe "solo-helper"
+    chef.add_recipe "drupal::default"
+    chef.add_recipe "drupal::node_sites"
+    chef.add_recipe "drupal::drush"
+    chef.add_recipe "promet_php::apache2"
+    chef.json = chef_json
   end
 end

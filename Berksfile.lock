@@ -3,7 +3,7 @@
     "drupal": {
       "locked_version": "0.1.1",
       "git": "git://github.com/promet/drupal_cookbook.git",
-      "ref": "c5f627a632698239a192caa70cc27b5289fa4291"
+      "ref": "e50c113ead4b1ac6a869f3803fbe32313178a4c6"
     },
     "promet_php": {
       "locked_version": "0.1.0",
@@ -15,41 +15,47 @@
       "git": "https://github.com/glennpratt/solo-helper_cookbook.git",
       "ref": "183b6e411c930ac8e7c638ad3cb10cae6a8af8fc"
     },
+    "postfix": {
+      "locked_version": "2.1.4"
+    },
+    "apache2": {
+      "locked_version": "1.7.0"
+    },
+    "ark": {
+      "locked_version": "0.4.0"
+    },
     "database": {
       "locked_version": "1.4.0"
     },
     "mysql": {
-      "locked_version": "3.0.2"
+      "locked_version": "3.0.4"
     },
     "openssl": {
-      "locked_version": "1.0.2"
+      "locked_version": "1.1.0"
     },
     "build-essential": {
-      "locked_version": "1.4.0"
+      "locked_version": "1.4.2"
     },
     "postgresql": {
-      "locked_version": "3.0.2"
+      "locked_version": "3.0.4"
     },
     "apt": {
-      "locked_version": "2.0.0"
+      "locked_version": "2.1.1"
     },
     "aws": {
-      "locked_version": "0.101.2"
+      "locked_version": "0.101.4"
     },
     "xfs": {
       "locked_version": "1.1.0"
     },
-    "apache2": {
-      "locked_version": "1.6.6"
-    },
     "git": {
-      "locked_version": "2.5.2"
+      "locked_version": "2.6.0"
     },
     "dmg": {
-      "locked_version": "1.1.0"
+      "locked_version": "2.0.0"
     },
     "yum": {
-      "locked_version": "2.3.0"
+      "locked_version": "2.3.2"
     },
     "windows": {
       "locked_version": "1.10.0"
@@ -58,22 +64,19 @@
       "locked_version": "1.1.4"
     },
     "runit": {
-      "locked_version": "1.1.6"
+      "locked_version": "1.2.0"
+    },
+    "hostsfile": {
+      "locked_version": "2.0.0"
+    },
+    "memcached": {
+      "locked_version": "1.5.0"
     },
     "php": {
-      "locked_version": "1.2.2"
+      "locked_version": "1.2.4"
     },
     "xml": {
       "locked_version": "1.1.2"
-    },
-    "memcached": {
-      "locked_version": "1.4.0"
-    },
-    "postfix": {
-      "locked_version": "2.1.6"
-    },
-    "hostsfile": {
-      "locked_version": "1.0.2"
     }
   }
 }

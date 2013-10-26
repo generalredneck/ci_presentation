@@ -31,7 +31,7 @@ Vagrant.configure("2") do |config|
   # config.vm.network :forwared_port, guest: 22, host: 2201,
   #   auto_correct: true
 
-  project = 'default-d7'
+  project = 'ci'
 
   config.vm.synced_folder ".", "/var/drupals/#{project}", :nfs => true
 

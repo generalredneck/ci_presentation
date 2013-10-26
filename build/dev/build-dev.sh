@@ -4,12 +4,6 @@ TMP_PWD=$PWD
 
 pushd $PWD
 
-# Pass all arguments to drush
-while [ $# -gt 0 ]; do
-  drush_flags="$drush_flags $1"
-  shift
-done
-
 drush="drush $drush_flags"
 build_path=$(dirname "$0")
 

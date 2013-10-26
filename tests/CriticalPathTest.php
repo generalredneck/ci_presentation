@@ -11,7 +11,7 @@ class CriticalPathTest extends PHPUnit_Extensions_SeleniumTestCase
   {
     $this->open("/");
     $this->type("id=edit-name", "admin");
-    $this->type("id=edit-pass", "adm1n");
+    $this->type("id=edit-pass", "drupaladm1n");
     $this->click("id=edit-submit");
     $this->waitForPageToLoad("30000");
     $this->click("link=Log out");
@@ -21,7 +21,7 @@ class CriticalPathTest extends PHPUnit_Extensions_SeleniumTestCase
   {
     $this->open("/");
     $this->type("id=edit-name", "admin");
-    $this->type("id=edit-pass", "adm1n");
+    $this->type("id=edit-pass", "drupaladm1n");
     $this->click("id=edit-submit");
     $this->waitForPageToLoad("30000");
     $this->assertEquals("My account", $this->getText("css=#secondary-menu-links li.first a"));

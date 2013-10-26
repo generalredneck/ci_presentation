@@ -37,13 +37,13 @@ echo "Uninstalling modules we do not need on any environment.";
 $drush pm-uninstall $(cat $build_path/mods_purge | tr '\n' ' ') -y
 echo "Enabling modules we need on every environment.";
 $drush en $(cat $build_path/mods_enabled | tr '\n' ' ') -y
+echo "Setting the theme default.";
+$drush scr $(dirname "$0")/scripts/default_set_theme.php
 echo "Clearing caches.";
 $drush cc all -y
 echo "Reverting all features.";
 $drush fra -y
 echo "Running any updates.";
 $drush updb -y
-echo "Setting the theme default.";
-$drush scr $(dirname "$0")/scripts/default_set_theme.php
 echo "Clearing caches one last time.";
 $drush cc all -y

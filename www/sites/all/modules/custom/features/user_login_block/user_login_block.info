@@ -1,0 +1,7 @@
+name = user_login_block
+core = 7.x
+package = Features
+dependencies[] = fe_block
+dependencies[] = user
+features[fe_block_settings][] = user-login
+features[features_api][] = api:2
